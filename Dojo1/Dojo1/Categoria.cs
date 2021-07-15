@@ -11,5 +11,17 @@ namespace Dojo1
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+
+        public void Cadastro()
+        {
+            Console.WriteLine("Digite o ID da categoria");
+            Id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Digite o nome do categoria");
+            Nome = Console.ReadLine();
+            Console.WriteLine("Digite a descrição da categoria");
+            Descricao = Console.ReadLine();
+        }
+      
     }
+
 }
