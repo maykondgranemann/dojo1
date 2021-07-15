@@ -9,6 +9,7 @@ namespace Dojo1
     class Menu
     {
         List<Produto> produtos = new List<Produto>();
+        List<Categoria> categorias = new List<Categoria>();
         public void MontaMenu()
         {
             Cabecalho();
@@ -57,11 +58,16 @@ namespace Dojo1
                     break;
                 case 2:
                     //Cadastrar categoria
-                    Categoria categoria = new Categoria();
-                    categoria.Cadastro();
+                    do
+                    {
+                        Categoria categoria = new Categoria();
+                        categoria.Cadastro();
+                        categorias.Add(categoria);
+                    } while (Sn());
                     break;
                 case 3:
                     //Listar Produto
+
                     break;
                 case 4:
                     //Listar Categoria
@@ -75,7 +81,7 @@ namespace Dojo1
             string resp;
             do
             {
-                Console.WriteLine("Deseja cadastrar um novo produto?");
+                Console.WriteLine("Deseja cadastrar um novo item?");
                 resp = Console.ReadLine().Trim().ToLower();
                 switch (resp)
                 {
