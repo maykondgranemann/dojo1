@@ -8,6 +8,7 @@ namespace Dojo1
 {
     class Menu
     {
+        List<Produto> produtos = new List<Produto>();
         public void MontaMenu()
         {
             Cabecalho();
@@ -45,8 +46,14 @@ namespace Dojo1
                     break;
                 case 1:
                     //Cadastrar produto
-                    Produto produto = new Produto();
-                    produto.CadastroProduto();
+                    do
+                    {
+                        Produto produto = new Produto();
+                        produto.CadastroProduto();
+                        produtos.Add(produto);
+                    } while (Sn());
+                    
+
                     break;
                 case 2:
                     //Cadastrar categoria
@@ -59,6 +66,28 @@ namespace Dojo1
                     break;
             }
 
+        }
+        public bool Sn()
+        {
+            bool resposta;
+            string resp;
+            do
+            {
+                Console.WriteLine("Deseja cadastrar um novo produto?");
+                resp = Console.ReadLine().Trim().ToLower();
+                switch (resp)
+                {
+                    case "s":
+                        resposta = true;
+                        return resposta;
+                    case "n":
+                        resposta = false;
+                        return resposta;
+                    default:
+                        Console.WriteLine("Opçao Invalida. Digite Novamente!");
+                        break;
+                }
+            } while (true);
         }
     }
 }
