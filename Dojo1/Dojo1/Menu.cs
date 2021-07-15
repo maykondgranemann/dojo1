@@ -13,6 +13,8 @@ namespace Dojo1
             Cabecalho();
             Opcoes();
             Rodape();
+            Escolha();
+
         }
 
         public void Cabecalho()
@@ -29,6 +31,32 @@ namespace Dojo1
         public void Opcoes()
         {
             Console.WriteLine("\n 1 - Cadastrar Produto \n 2 - Cadastro Categoria \n 3 - Listar Produtos \n 4 - Listar Categorias \n 0 - Sair");
+        }
+        
+        public void Escolha()
+        {
+            Console.Write("Escolha uma opcao: ");
+            int opcao = Convert.ToInt32(Console.ReadLine());
+            switch (opcao)
+            {
+                case 0:
+                    //Sair
+
+                    break;
+                case 1:
+                    //Cadastrar produto
+                    break;
+                case 2:
+                    //Cadastrar categoria
+                    break;
+                case 3:
+                    //Listar Produto
+                    break;
+                case 4:
+                    //Listar Categoria
+                    break;
+            }
+
         }
     }
 }
