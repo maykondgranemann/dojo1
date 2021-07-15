@@ -45,6 +45,8 @@ namespace Dojo1
                     break;
                 case 1:
                     //Cadastrar produto
+                    Produto produto = new Produto();
+                    produto.CadastroProduto();
                     break;
                 case 2:
                     //Cadastrar categoria
